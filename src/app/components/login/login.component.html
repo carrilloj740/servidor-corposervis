@@ -1,0 +1,55 @@
+<nav class="navbar background-nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../../assets/logo.png" alt="Bootstrap" width="35" height="30"
+                class="d-inline-block align-text-top mx-3">
+            <span class="text-light fw-bold fs-5 mx-1 ">Corposervis C.A</span>
+        </a>
+    </div>
+</nav>
+
+<div class="d-flex align-items-center py-4 background-color">
+    <div class="form-signin w-900 m-auto">
+        <form (ngSubmit)="onSubmit()">
+            <div class="text-center">
+                <img class="mb-4 text-center" src="../../../assets/logoOscuro.png" alt="" width="150" height="150">
+                <h1 class="h5 mb-3 fw-bold">Área Ingreso Sistemas Administrativos</h1>
+
+            </div>
+
+            <!-- <h1 class="h3 mb-3 fw-bold text-light text-center mb-4">Ingresar</h1> -->
+
+            <div class="form-floating mb-2">
+
+                <!-- <input [(ngModel)]="username" placeholder="Username" name="username" required class="form-control"
+                    id="floatingInput"> -->
+
+                <input [(ngModel)]="username" placeholder="Username" name="username" required class="form-control">
+
+                <label for="floatingInput">usuario</label>
+            </div>
+
+            <div class="form-floating">
+                <!-- <input [(ngModel)]="password" type="password" placeholder="Password" name="password" required
+                    class="form-control"> -->
+                <input [(ngModel)]="password" type="password" placeholder="Password" name="password" required
+                    class="form-control">
+
+                <label for="floatingPassword">contraseña</label>
+            </div>
+
+            <p *ngIf="errorMessage" class="fw-bold text-light">{{ errorMessage }}</p>
+            <button class="btn btn-corposervis-color w-100 py-2 mt-4 fw-bold text-light" type="submit">Acceder</button>
+        </form>
+    </div>
+</div>
+
+
+<!-- <div>
+    <form (ngSubmit)="onSubmit()">
+        <input [(ngModel)]="username" placeholder="Username" name="username" required>
+        <input [(ngModel)]="password" type="password" placeholder="Password" name="password" required>
+        <button type="submit">Login</button>
+        <p *ngIf="errorMessage">{{ errorMessage }}</p>
+      </form>
+</div> -->

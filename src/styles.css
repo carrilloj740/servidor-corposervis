@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+
+}
+
+
+
+.color-corpo {
+    color: #1c4587;
+}
+
+.btn-corpo {
+    color: #ffff;
+    background-color: #1c4587;
+}
+
+.btn-corpo:hover {
+    color: #1c4587;
+    border: #1c4587 solid 2px;
+    background:none;
+    font-weight: semi-bold;
+}

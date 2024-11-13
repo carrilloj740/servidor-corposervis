@@ -1,0 +1,13 @@
+<nav class="navbar background-nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="../../../assets/logo.png" alt="Bootstrap" width="35" height="30"
+                class="d-inline-block align-text-top mx-3">
+            <span class="text-light fw-bold fs-5 mx-1 ">Corposervis C.A</span>
+        </a>
+      
+        <a *ngIf="authService.isLoggedIn()" (click)="logout()">  <span class="material-icons-outlined icon-boton"> logout
+        </span></a>
+        
+    </div>
+</nav>

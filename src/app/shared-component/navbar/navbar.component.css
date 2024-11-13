@@ -1,0 +1,16 @@
+.background-nav {
+    background-color: #1c4587;
+
+}
+
+span {
+    color: #fff;
+}
+
+a:link {
+    color: #fff;
+}
+
+.icon-boton {
+    cursor: pointer;
+}
