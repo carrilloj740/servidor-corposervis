@@ -9,8 +9,16 @@ import { Observable, of } from 'rxjs';
 export class AuthService {
   private users = [
     { username: 'corposervis', password: 'toortoor', role: 'admin' },
-    { username: 'policiasm', password: 'WvqZ4HVAPJQBYCzdnRvL', role: 'policia1' },
-    { username: 'proteccioncsm', password: '1EKxJGzJF9c6PLfD4nZo', role: 'proteccionCM' },
+    {
+      username: 'policiasm',
+      password: 'WvqZ4HVAPJQBYCzdnRvL',
+      role: 'policia1',
+    },
+    {
+      username: 'proteccioncsm',
+      password: '1EKxJGzJF9c6PLfD4nZo',
+      role: 'proteccionCM',
+    },
     {
       username: 'adminUserPmmsmAdm',
       password: 'pass',
@@ -35,7 +43,7 @@ export class AuthService {
 
   login(username: string, password: string): Observable<boolean> {
     // Agregamos un mensaje para verificar que estamos recibiendo los valores correctos
-    console.log('Login attempt:', username, password);
+    // console.log('Login attempt:', username, password);
 
     // Buscar el usuario en la lista
     const user = this.users.find(

@@ -5,9 +5,21 @@
                 class="d-inline-block align-text-top mx-3">
             <span class="text-light fw-bold fs-5 mx-1 ">Corposervis C.A</span>
         </a>
-      
-        <a *ngIf="authService.isLoggedIn()" (click)="logout()">  <span class="material-icons-outlined icon-boton"> logout
-        </span></a>
-        
+
+
+        <div>
+            <a data-bs-toggle="tooltip" data-bs-placement="left"
+                data-bs-title="Al cerrar sesión, debe ingresar nuevamente el token"> <span
+                    class="material-icons-outlined icon-boton mx-3 fs-6">
+                    info
+                </span>
+            </a>
+            <a *ngIf="authService.isLoggedIn()" (click)="logout()"> <span class="material-icons-outlined icon-boton">
+                    logout
+                </span>
+            </a>
+        </div>
+
     </div>
+
 </nav>
