@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Importa FormsModule
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,8 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { PoliciaComponent } from './components/clientes/policia/policia.component';
 import { ProteccionCivilMarinoComponent } from './components/clientes/proteccion-civil-marino/proteccion-civil-marino.component';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { CreateCardFormComponent } from './components/create-card-form/create-card-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@a
     NavbarComponent,
     AdminDashboardComponent,
     PoliciaComponent,
-    ProteccionCivilMarinoComponent
+    ProteccionCivilMarinoComponent,
+    CreateCardFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([]),
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],

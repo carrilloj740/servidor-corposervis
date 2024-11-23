@@ -42,7 +42,7 @@ export class AuthService {
   ) {}
 
   login(username: string, password: string): Observable<boolean> {
-    // Agregamos un mensaje para verificar que estamos recibiendo los valores correctos
+    // Verificación
     // console.log('Login attempt:', username, password);
 
     // Buscar el usuario en la lista

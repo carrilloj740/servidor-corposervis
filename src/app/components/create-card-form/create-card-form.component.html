@@ -1,0 +1,71 @@
+<!-- <div class="card-form">
+    <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="name">Título del ticket:</label>
+        <input
+          id="name"
+          type="text"
+          formControlName="name"
+          placeholder="Escribe el nombre de la tarjeta"
+        />
+        <div *ngIf="cardForm.get('name')?.invalid && cardForm.get('name')?.touched">
+          <small *ngIf="cardForm.get('name')?.hasError('required')">
+            El título es obligatorio.
+          </small>
+          <small *ngIf="cardForm.get('name')?.hasError('minlength')">
+            El título debe tener al menos 10 caracteres.
+          </small>
+        </div>
+      </div>
+  
+      <div>
+        <label for="desc">Descripción:</label>
+        <textarea
+          id="desc"
+          formControlName="desc"
+          placeholder="Escribe una descripción"
+        ></textarea>
+      </div>
+  
+      <button type="submit" [disabled]="cardForm.invalid">Crear ticket</button>
+    </form>
+  </div>
+   -->
+
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-center text-lg-start">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Vertically centered hero sign-up form</h1>
+      <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required
+        form group has a validation state that can be triggered by attempting to submit the form without completing it.
+      </p>
+    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="name" type="text" formControlName="name"
+            placeholder="Escribe el nombre de la tarjeta">
+          <label for="floatingInput">Asunto</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea class="form-control" id="desc" formControlName="desc"
+            placeholder="Escribe una descripción"></textarea>
+          <label for="floatingPassword">Mensaje</label>
+
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="cardForm.invalid">Abrir ticket</button>
+        <hr class="my-4">
+        <div *ngIf="cardForm.get('name')?.invalid && cardForm.get('name')?.touched">
+          <small *ngIf="cardForm.get('name')?.hasError('required')">
+            El título es obligatorio.
+          </small>
+          <small *ngIf="cardForm.get('name')?.hasError('minlength')">
+            El título debe tener al menos 10 caracteres.
+          </small>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

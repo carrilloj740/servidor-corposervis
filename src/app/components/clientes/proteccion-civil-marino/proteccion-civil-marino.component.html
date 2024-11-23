@@ -53,6 +53,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- <div class="col">
                 <div class="card h-100">
                     <img src="../../../../assets/sadmim.png" class="card-img-top mx-auto d-block logo-sistema mt-3"
@@ -69,6 +70,76 @@
             </div> -->
 
         </div>
+    </div>
 
+</div>
+
+<!-- Ticket section -->
+<div class="border-top"></div>
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
+                Sección de Tickets
+            </h1>
+            <p class="col-lg-10 fs-4">
+                En esta área reporte las fallas del sistema o requerimientos de soporte.
+            </p>
+        </div>
+
+        <div class="col-md-10 mx-auto col-lg-5">
+            
+            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert" *ngIf="cardCreatedStatus">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                <div>
+                 Ticket creado
+                </div>
+              </div>
+            <!-- Formulario combinado -->
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" [formGroup]="combinedForm"
+                (ngSubmit)="onSubmit()">
+                <!-- Nombre de la tarjeta -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" formControlName="name"
+                        placeholder="Escribe el nombre de la tarjeta" autocomplete="off" />
+                    <label for="name">Asunto</label>
+                </div>
+
+                <!-- Comentario adicional -->
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="comment" formControlName="comment"
+                        placeholder="Escribe un comentario adicional (opcional)"></textarea>
+                    <label for="comment">Email</label>
+                </div>
+
+                <!-- Descripción de la tarjeta -->
+                <div class="form-floating mb-3">
+                    <textarea class="form-control textarea-class" id="desc" formControlName="desc"
+                        placeholder="Escribe una descripción"></textarea>
+                    <label for="desc">Mensaje</label>
+                </div>
+
+
+
+                <!-- Botón de enviar -->
+                <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="combinedForm.invalid">
+                    Crear ticket
+                </button>
+
+                <hr class="my-4" />
+                <div *ngIf="combinedForm.get('name')?.invalid && combinedForm.get('name')?.touched">
+                    <small *ngIf="combinedForm.get('name')?.hasError('required')">
+                        El asunto es obligatorio.
+                    </small>
+                    <small *ngIf="combinedForm.get('name')?.hasError('minlength')">
+                        El asunto debe tener al menos 5 caracteres.
+                    </small>
+                </div>
+
+               
+            </form>
+           
+        </div>
     </div>
 </div>

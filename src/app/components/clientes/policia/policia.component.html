@@ -22,7 +22,8 @@
                         alt="...">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Sistema Administrativo</h5>
-                        <p class="card-text">Formulación, Ejecución, Compras y Suministros, Contabilidad Físcal, Tesorería y Bancos, Bienes muebles e inmuebles</p>
+                        <p class="card-text">Formulación, Ejecución, Compras y Suministros, Contabilidad Físcal,
+                            Tesorería y Bancos, Bienes muebles e inmuebles</p>
                         <a href="http://96.47.237.220:8080" target="_blank" class="card-link btn btn-corpo">Ingresar</a>
                         <!-- <a href="#" class="card-link">Descargar</a> -->
                     </div>
@@ -34,16 +35,17 @@
                         alt="...">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Sistema Personal</h5>
-                        <p class="card-text">Sistema de Recursos Humanos, Emisión de Nominas, Registro Básico de Personal.</p>
-                        <a href="http://96.47.237.220:8082"  target="_blank" class="card-link btn btn-corpo">Ingresar</a>
+                        <p class="card-text">Sistema de Recursos Humanos, Emisión de Nominas, Registro Básico de
+                            Personal.</p>
+                        <a href="http://96.47.237.220:8082" target="_blank" class="card-link btn btn-corpo">Ingresar</a>
                         <!-- <a href="#" class="card-link">Descargar</a> -->
                     </div>
                 </div>
             </div>
             <div class="col">
                 <div class="card h-100">
-                    <img src="../../../../assets/capacitacion.png" class="card-img-top mx-auto d-block logo-sistema mt-3"
-                        alt="...">
+                    <img src="../../../../assets/capacitacion.png"
+                        class="card-img-top mx-auto d-block logo-sistema mt-3" alt="...">
                     <div class="card-body">
                         <h5 class="card-title fw-bold">Adiestramiento y Capacitación Corposervis</h5>
                         <!-- <p class="card-text">Área de Capatación y Adiestramiento</p> -->
@@ -66,6 +68,68 @@
                     </div>
                 </div>
             </div> -->
+
+
+        </div>
+    </div>
+</div>
+
+<!-- Ticket Section -->
+<div class="border-top"></div>
+
+
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-lg-5 py-5">
+        <div class="col-lg-7 text-center text-lg-start">
+            <h1 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">
+                Sección de Tickets
+            </h1>
+            <p class="col-lg-10 fs-4">
+                En esta área reporte las fallas del sistema o requerimientos de soporte.
+            </p>
+        </div>
+        <div class="col-md-10 mx-auto col-lg-5">
+            <!-- Formulario combinado -->
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" [formGroup]="combinedForm"
+                (ngSubmit)="onSubmit()">
+                <!-- Nombre de la tarjeta -->
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" formControlName="name"
+                        placeholder="Escribe el nombre de la tarjeta" autocomplete="off" />
+                    <label for="name">Asunto</label>
+                </div>
+
+                <!-- Comentario adicional -->
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="comment" formControlName="comment"
+                        placeholder="Escribe un comentario adicional (opcional)"></textarea>
+                    <label for="comment">Email</label>
+                </div>
+
+                <!-- Descripción de la tarjeta -->
+                <div class="form-floating mb-3">
+                    <textarea class="form-control textarea-class" id="desc" formControlName="desc"
+                        placeholder="Escribe una descripción"></textarea>
+                    <label for="desc">Mensaje</label>
+                </div>
+
+
+
+                <!-- Botón de enviar -->
+                <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="combinedForm.invalid">
+                    Crear ticket
+                </button>
+
+                <hr class="my-4" />
+                <div *ngIf="combinedForm.get('name')?.invalid && combinedForm.get('name')?.touched">
+                    <small *ngIf="combinedForm.get('name')?.hasError('required')">
+                        El asunto es obligatorio.
+                    </small>
+                    <small *ngIf="combinedForm.get('name')?.hasError('minlength')">
+                        El asunto debe tener al menos 5 caracteres.
+                    </small>
+                </div>
+            </form>
         </div>
     </div>
 </div>
