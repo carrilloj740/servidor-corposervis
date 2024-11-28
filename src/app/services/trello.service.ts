@@ -13,14 +13,13 @@ export class TrelloService {
 
   constructor(private http: HttpClient) {}
 
-  /**
-   * Crear una tarjeta en Trello
-   */
+// Crear tajeta
   createCard(
     idList: string,
     name: string,
     desc: string = '',
-    idMembers: string = ''
+    idMembers: string = '',
+    idLabels: string = '',
   ): Observable<any> {
     const url = `${this.baseUrl}/cards`;
 
@@ -30,7 +29,8 @@ export class TrelloService {
       .set('idList', idList)
       .set('name', name)
       .set('desc', desc)
-      .set('idMembers', idMembers);
+      .set('idMembers', idMembers)
+      .set('idLabels', idLabels);
 
     return this.http.post(url, {}, { params }).pipe(
       catchError((error) => {
@@ -40,9 +40,7 @@ export class TrelloService {
     );
   }
 
-  /**
-   * Añadir un comentario a una tarjeta en Trello
-   */
+// Agregar comentario
   addCommentToCard(cardId: string, text: string): Observable<any> {
     const url = `${this.baseUrl}/cards/${cardId}/actions/comments`;
 
@@ -68,4 +66,11 @@ export class TrelloService {
       })
     );
   }
+
+
+  getCardsByList(listId: string): Observable<any[]> {
+    const url = `${this.baseUrl}/lists/${listId}/cards?key=${this.apiKey}&token=${this.token}`;
+    return this.http.get<any[]>(url);
+  }
+  
 }

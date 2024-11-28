@@ -3,6 +3,26 @@
     height: 100px;
 }
 
-.textarea-class{
+.textarea-class {
     height: 150px;
+}
+
+.status-done {
+    color: #196f3d;
+    font-weight: bold;
+
+}
+
+.status-pending {
+    color: #d02605;
+    font-weight: bold;
+}
+
+.status-in-progress {
+    color: #ffd136;
+    font-weight: bold;
+}
+
+td {
+    max-width: 150px;
 }

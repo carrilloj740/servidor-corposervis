@@ -74,7 +74,7 @@
 
 </div>
 
-<!-- Ticket section -->
+<!-- Ticket Form section -->
 <div class="border-top"></div>
 
 <div class="container col-xl-10 col-xxl-8 px-4 py-5">
@@ -89,15 +89,16 @@
         </div>
 
         <div class="col-md-10 mx-auto col-lg-5">
-            
-            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert" *ngIf="cardCreatedStatus">
+
+            <div class="alert alert-success d-flex align-items-center alert-dismissible" role="alert"
+                *ngIf="cardCreatedStatus">
                 <button class="btn-close" data-bs-dismiss="alert"></button>
                 <div>
-                 Ticket creado
+                    Ticket creado
                 </div>
-              </div>
-            <!-- Formulario combinado -->
-            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary" [formGroup]="combinedForm"
+            </div>
+            <!-- Formulario -->
+            <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary mb-4" [formGroup]="combinedForm"
                 (ngSubmit)="onSubmit()">
                 <!-- Nombre de la tarjeta -->
                 <div class="form-floating mb-3">
@@ -137,9 +138,77 @@
                     </small>
                 </div>
 
-               
+
             </form>
-           
         </div>
+
     </div>
+</div>
+
+<!-- Sección de Vista -->
+<div class="border-top"></div>
+
+<h1 class="fw-bold lh-1 text-body-emphasis mb-3 text-center mt-5 mb-5">
+    Sus tickets
+</h1>
+
+
+<!-- Tabla en donde se muestran tickets -->
+<div class="table-responsive container mb-5">
+    <table class="table align-middle " id="combinedTable">
+        <thead>
+            <tr>
+                <th scope="col">Ticket tomado el día</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Estado</th>
+                <th scope="">
+                    <a (click)="refresh()"> <span class="material-icons-outlined icon-boton clic-class">
+                            refresh
+                        </span>
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Mensaje si no hay tarjetas en ninguna lista -->
+            <tr *ngIf="cards.length === 0 && cardsProcess.length === 0" scope="row">
+                <td colspan="5">No hay tarjetas en ninguna lista</td>
+            </tr>
+
+            <!-- Tarjetas pendientes -->
+            <tr *ngFor="let card of cardsPendiente" scope="row">
+                <td>{{ card.dateLastActivity | date:'medium' }}</td>
+                <td>{{ card.name || 'Sin nombre' }}</td>
+                <td>{{ card.desc || 'Sin descripción' }}</td>
+                <td [ngClass]="{
+                    'status-pending': card.labels[0]?.name === 'Pendiente'
+                }">
+                    {{ card.labels[0]?.name || 'Pendiente de estado' }}</td>
+            </tr>
+            <!-- Tarjetas en proceso -->
+            <tr *ngFor="let card of cardsProcess" scope="row">
+                <td>{{ card.dateLastActivity | date:'medium' }}</td>
+                <td>{{ card.name || 'Sin nombre' }}</td>
+                <td>{{ card.desc || 'Sin descripción' }}</td>
+                <td [ngClass]="{
+        'status-in-progress': card.labels[0]?.name === 'Caso tomado'
+    }">
+                    {{ card.labels[0]?.name || 'Pendiente de estado' }}
+                </td>
+            </tr>
+
+            <!-- Tarjetas finalizadas -->
+            <tr *ngFor="let card of cards" scope="row">
+                <td>{{ card.dateLastActivity | date:'medium' }}</td>
+                <td>{{ card.name || 'Sin nombre' }}</td>
+                <td>{{ card.desc || 'Sin descripción' }}</td>
+                <td [ngClass]="{
+        'status-done': card.labels[0]?.name === 'Finalizado'
+    }">
+                    {{ card.labels[0]?.name || 'Pendiente de estado' }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>

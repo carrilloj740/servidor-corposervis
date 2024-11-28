@@ -21,6 +21,10 @@
 .btn-corpo:hover {
     color: #1c4587;
     border: #1c4587 solid 2px;
-    background:none;
+    background: none;
     font-weight: semi-bold;
+}
+
+.clic-class {
+    cursor: pointer;
 }

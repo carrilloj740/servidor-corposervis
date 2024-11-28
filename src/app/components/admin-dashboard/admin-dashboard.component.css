@@ -22,6 +22,10 @@ body {
 }
 
 
+.bg-capacitacion{
+    background-color: #d6dbdf83;
+}
+
 /* .img-system {
     background: linear-gradient(rgba(5, 7, 12, 0-75), rgba(5, 7, 12, 0.95)), url("../../../assets/sadmim.png") no-repeat center fixed;
     background-size: cover;
