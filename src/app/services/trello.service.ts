@@ -68,9 +68,11 @@ export class TrelloService {
   }
 
 
+  // Mostrar tarjetas
   getCardsByList(listId: string): Observable<any[]> {
     const url = `${this.baseUrl}/lists/${listId}/cards?key=${this.apiKey}&token=${this.token}`;
     return this.http.get<any[]>(url);
   }
-  
+
+
 }

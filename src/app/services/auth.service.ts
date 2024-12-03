@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { LocalStorageService } from './local-storage.service';
 import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -42,8 +43,6 @@ export class AuthService {
   ) {}
 
   login(username: string, password: string): Observable<boolean> {
-    // Verificación
-    // console.log('Login attempt:', username, password);
 
     // Buscar el usuario en la lista
     const user = this.users.find(

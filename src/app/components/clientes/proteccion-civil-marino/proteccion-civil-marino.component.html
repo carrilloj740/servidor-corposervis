@@ -185,6 +185,7 @@
                     'status-pending': card.labels[0]?.name === 'Pendiente'
                 }">
                     {{ card.labels[0]?.name || 'Pendiente de estado' }}</td>
+                   
             </tr>
             <!-- Tarjetas en proceso -->
             <tr *ngFor="let card of cardsProcess" scope="row">
@@ -196,6 +197,7 @@
     }">
                     {{ card.labels[0]?.name || 'Pendiente de estado' }}
                 </td>
+              
             </tr>
 
             <!-- Tarjetas finalizadas -->
@@ -208,6 +210,7 @@
     }">
                     {{ card.labels[0]?.name || 'Pendiente de estado' }}
                 </td>
+             
             </tr>
         </tbody>
     </table>

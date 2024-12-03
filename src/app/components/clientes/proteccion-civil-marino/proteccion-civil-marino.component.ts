@@ -88,35 +88,7 @@ export class ProteccionCivilMarinoComponent {
 
   }
 
-  // getCards(): void {
-  //   this.trelloService.getCardsByList(environment.idListPCSMFinalizado).subscribe({
-  //     next: (data) => {
-  //       console.log('Respuesta de la API:', data);
-  //       this.cards = data;
-
-  //     },
-  //     error: (err) => {
-  //       console.error('Error al obtener las tarjetas:', err);
-  //     },
-  //   });
-
-  // }
-
-  // getCardsProceso(): void {
-  //   this.trelloService
-  //     .getCardsByList(environment.idListPCSMProceso)
-  //     .subscribe({
-  //       next: (d) => {
-  //         console.log('Respuesta de la API:', d);
-  //         this.cardsProcess = d;
-  //       },
-  //       error: (err) => {
-  //         console.error('Error al obtener las tarjetas:', err);
-  //       },
-  //     });
-  // }
-
-  // Mostrar todas las cards
+  // Se muestran las tarjetas en tabla
   getCardsByList(
     idList: string,
     target: 'finalizado' | 'proceso' | 'pendiente'
@@ -139,6 +111,10 @@ export class ProteccionCivilMarinoComponent {
       },
     });
   }
+
+
+
+
 
   // Refrsh para bóton de la table
   refresh(): void {
