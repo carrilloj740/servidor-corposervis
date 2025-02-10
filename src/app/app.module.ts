@@ -12,7 +12,12 @@ import { PoliciaComponent } from './components/clientes/policia/policia.componen
 import { ProteccionCivilMarinoComponent } from './components/clientes/proteccion-civil-marino/proteccion-civil-marino.component';
 import { HashLocationStrategy, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { CreateCardFormComponent } from './components/create-card-form/create-card-form.component';
+
 import { HttpClientModule } from '@angular/common/http';
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [
@@ -29,10 +34,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule,
     RouterModule.forRoot([]),
+    HttpClientModule,
+    
   ],
   providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}

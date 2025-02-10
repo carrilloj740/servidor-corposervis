@@ -16,22 +16,26 @@ table {
 
 
 
-.status-done{
+.status-done {
     color: #196f3d;
     font-weight: bold;
 
 }
 
-.status-pending{
+.status-pending {
     color: #d02605;
     font-weight: bold;
 }
 
-.status-in-progress{
+.status-in-progress {
     color: #ffd136;
     font-weight: bold;
 }
 
-td{
+td {
     max-width: 150px;
+    max-height: 50px; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

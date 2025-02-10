@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { tap } from 'rxjs/operators';
 import { LocalStorageService } from './local-storage.service';
 import { Observable, of } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -34,6 +36,7 @@ export class AuthService {
     { username: 'adminUserPmmsmPer', password: 'pass', role: 'personal1' },
     { username: 'adminUserPcmsmPer', password: 'pass', role: 'personal2' },
   ];
+
 
   private role: string | null = null;
 
@@ -74,7 +77,7 @@ export class AuthService {
       return of(true);
     } else {
       console.warn('Invalid credentials');
-      alert('Credenciales incorrectas');
+      // alert('Credenciales incorrectas');
       return of(false);
     }
   }
@@ -92,4 +95,5 @@ export class AuthService {
     this.localStorage.removeItem('userRole');
     this.router.navigate(['/login']);
   }
+
 }

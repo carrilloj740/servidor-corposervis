@@ -3,8 +3,8 @@
 <div class="container col-xxl-8 px-4 py-5">
     <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
-            <img src="../../../../assets/proteccion-civil-marino.png" class="d-block mx-lg-auto img-fluid"
-                alt="Bootstrap Themes" width="300" height="300" loading="lazy">
+            <img src="../../../../assets/proteccion-civil-marino.png" class="d-block mx-lg-auto img-fluid logo-cliente"
+                alt="Bootstrap Themes" loading="lazy">
         </div>
 
         <!-- Sección Cliente -->
@@ -24,7 +24,7 @@
                         <h5 class="card-title fw-bold">Sistema Administrativo</h5>
                         <p class="card-text">Formulación, Ejecución, Compras y Suministros, Contabilidad Físcal,
                             Tesorería y Bancos, Bienes muebles e inmuebles</p>
-                        <a href="http://96.47.237.220:8080" target="_blank" class="card-link btn btn-corpo">Ingresar</a>
+                        <a href="http://96.47.237.220:8081" target="_blank" class="card-link btn btn-corpo">Ingresar</a>
                         <!-- <a href="#" class="card-link">Descargar</a> -->
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                         <h5 class="card-title fw-bold">Sistema Personal</h5>
                         <p class="card-text">Sistema de Recursos Humanos, Emisión de Nominas, Registro Básico de
                             Personal.</p>
-                        <a href="http://96.47.237.220:8082" target="_blank" class="card-link btn btn-corpo">Ingresar</a>
+                        <a href="http://96.47.237.220:8083" target="_blank" class="card-link btn btn-corpo">Ingresar</a>
                         <!-- <a href="#" class="card-link">Descargar</a> -->
                     </div>
                 </div>
@@ -107,6 +107,7 @@
                     <label for="name">Asunto</label>
                 </div>
 
+
                 <!-- Comentario adicional -->
                 <div class="form-floating mb-3">
                     <textarea class="form-control" id="comment" formControlName="comment"
@@ -124,7 +125,7 @@
 
 
                 <!-- Botón de enviar -->
-                <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="combinedForm.invalid">
+                <button class="w-100 btn btn-lg btn-corpo" type="submit" [disabled]="combinedForm.invalid">
                     Crear ticket
                 </button>
 
@@ -185,7 +186,7 @@
                     'status-pending': card.labels[0]?.name === 'Pendiente'
                 }">
                     {{ card.labels[0]?.name || 'Pendiente de estado' }}</td>
-                   
+
             </tr>
             <!-- Tarjetas en proceso -->
             <tr *ngFor="let card of cardsProcess" scope="row">
@@ -197,20 +198,21 @@
     }">
                     {{ card.labels[0]?.name || 'Pendiente de estado' }}
                 </td>
-              
+
             </tr>
 
             <!-- Tarjetas finalizadas -->
             <tr *ngFor="let card of cards" scope="row">
                 <td>{{ card.dateLastActivity | date:'medium' }}</td>
                 <td>{{ card.name || 'Sin nombre' }}</td>
-                <td>{{ card.desc || 'Sin descripción' }}</td>
-                <td [ngClass]="{
+                <td class="size-td">{{ card.desc || 'Sin descripción' }}</td>
+                <td  [ngClass]="{
         'status-done': card.labels[0]?.name === 'Finalizado'
     }">
                     {{ card.labels[0]?.name || 'Pendiente de estado' }}
                 </td>
-             
+                
+
             </tr>
         </tbody>
     </table>

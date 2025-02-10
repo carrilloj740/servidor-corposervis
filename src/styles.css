@@ -15,7 +15,7 @@
 
 .btn-corpo {
     color: #ffff;
-    background-color: #1c4587;
+    background-color: #1c4587; 
 }
 
 .btn-corpo:hover {
@@ -23,8 +23,29 @@
     border: #1c4587 solid 2px;
     background: none;
     font-weight: semi-bold;
+
 }
 
 .clic-class {
     cursor: pointer;
+}
+
+
+.btn.disabled, .btn:disabled, fieldset:disabled .btn {
+    color: #ffff;
+    pointer-events: none;
+    background-color: #1c4587;
+    opacity: 0.5;
+}
+
+.logo-cliente {
+    width: 300px;
+    height: 300px;
+}
+
+
+
+.size-logo {
+    width: 35px;
+    height: 30px;
 }

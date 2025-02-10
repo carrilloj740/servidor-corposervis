@@ -1,8 +1,8 @@
 <nav class="navbar background-nav">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">
-            <img src="../../../assets/logo.png" alt="Bootstrap" width="35" height="30"
-                class="d-inline-block align-text-top mx-3">
+            <img src="../../../assets/logo.png" alt="Bootstrap"
+                class="d-inline-block align-text-top mx-3 size-logo">
             <span class="text-light fw-bold fs-5 mx-1 ">Corposervis C.A</span>
         </a>
     </div>
@@ -12,7 +12,7 @@
     <div class="form-signin w-900 m-auto">
         <form (ngSubmit)="onSubmit()">
             <div class="text-center">
-                <img class="mb-4 text-center" src="../../../assets/logoOscuro.png" alt="" width="150" height="150">
+                <img class="mb-4 text-center logo-oscuro" src="../../../assets/logoOscuro.png" alt="">
                 <h1 class="h5 mb-3 fw-bold">Área Ingreso Sistemas Administrativos</h1>
 
             </div>
@@ -38,7 +38,7 @@
                 <label for="floatingPassword">contraseña</label>
             </div>
 
-            <p *ngIf="errorMessage" class="fw-bold text-light">{{ errorMessage }}</p>
+            <p *ngIf="errorMessage" class="fw-bold">{{ errorMessage }}</p>
             <button class="btn btn-corposervis-color w-100 py-2 mt-4 fw-bold text-light" type="submit">Acceder</button>
         </form>
     </div>

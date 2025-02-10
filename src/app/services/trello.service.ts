@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { catchError, Observable, throwError } from 'rxjs';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
+import { catchError, Observable, tap, throwError } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -10,6 +10,8 @@ export class TrelloService {
   private baseUrl = environment.trelloBaseUrl;
   private apiKey = environment.trelloApiKey;
   private token = environment.trelloToken;
+  private auth = "";
+  router: any;
 
   constructor(private http: HttpClient) {}
 
@@ -74,5 +76,7 @@ export class TrelloService {
     return this.http.get<any[]>(url);
   }
 
+
+  
 
 }
